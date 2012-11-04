@@ -1,11 +1,15 @@
 package cs224n.corefsystems;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cs224n.coref.ClusteredMention;
 import cs224n.coref.Document;
 import cs224n.coref.Entity;
+import cs224n.coref.Mention;
 import cs224n.util.Pair;
 
 public class OneCluster implements CoreferenceSystem {
@@ -18,8 +22,20 @@ public class OneCluster implements CoreferenceSystem {
 
 	@Override
 	public List<ClusteredMention> runCoreference(Document doc) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	  List<ClusteredMention> mentions = new ArrayList<ClusteredMention>();
+		ClusteredMention newCluster = null;
+	    for(Mention m : doc.getMentions()){
+	    	if(newCluster == null){
+	    		newCluster=m.markSingleton();
+	    		mentions.add(newCluster);
+	    		
+	    	}	else{
+	    		mentions.add(m.markCoreferent(newCluster.entity));
+	    	}	
+	      }
+	    
+	    //(return the mentions)
+	    return mentions;
+	  }
 
 }
