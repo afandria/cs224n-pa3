@@ -6,6 +6,7 @@ import cs224n.coref.Entity;
 import cs224n.coref.Mention;
 import cs224n.corefsystems.BaselineCoreferenceSystem;
 import cs224n.corefsystems.CoreferenceSystem;
+import cs224n.corefsystems.*;
 import cs224n.util.*;
 
 import java.io.File;
