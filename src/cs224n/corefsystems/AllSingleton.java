@@ -24,7 +24,6 @@ public class AllSingleton implements CoreferenceSystem {
 	public List<ClusteredMention> runCoreference(Document doc) {
 	    //(variables)
 	    List<ClusteredMention> mentions = new ArrayList<ClusteredMention>();
-	    Map<String,Entity> clusters = new HashMap<String,Entity>();
 	    //(for each mention...)
 	    for(Mention m : doc.getMentions()){
 	      // No matter what..., regardless of text, just make it a new singleton cluster
