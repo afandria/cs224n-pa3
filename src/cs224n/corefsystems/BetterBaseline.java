@@ -253,7 +253,7 @@ public class BetterBaseline implements CoreferenceSystem {
 	    //(for each mention...)
 	    for(Mention m : doc.getMentions()){
 	      //(...get its text)
-	      String mentionString = m.gloss();
+	      String mentionString = m.headWord(); // m.gloss();
 	      //(...if we've seen this text before...)
 	      if(clusters.containsKey(mentionString)){
 	        //(...add it to the cluster)

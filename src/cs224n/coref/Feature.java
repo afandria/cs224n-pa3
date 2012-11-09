@@ -88,6 +88,33 @@ public interface Feature {
   /*
    * TODO: If necessary, add new feature types
    */
+  public static class ExactHeadMatch extends Indicator {
+	public ExactHeadMatch(boolean exactHeadMatch){ super(exactHeadMatch); }
+  }
+  public static class NearbyMentions extends Indicator {
+	  public NearbyMentions(boolean nearby) { super(nearby); }
+  }
+  public static class HobbsCandidate extends Indicator {
+	  public HobbsCandidate(boolean isCandidate) { super(isCandidate); }
+  }
+  public static class NearbyEditDistance extends Indicator {
+	  public NearbyEditDistance(boolean nearby) { super(nearby); }
+  }
+  public static class NearbyHeadEditDistance extends Indicator {
+	  public NearbyHeadEditDistance(boolean nearby) { super(nearby); }
+  }
+  public static class PronounMatch extends Indicator {
+	  public PronounMatch(boolean match) { super(match); }
+  }
+  public static class GenderExactMatch extends Indicator {
+	  public GenderExactMatch(boolean match) { super(match); }
+  }
+  public static class GenderNoMatch extends Indicator {
+	  public GenderNoMatch(boolean match) { super(match); }
+  }
+  public static class AnyTokenMatch extends Indicator {
+	  public AnyTokenMatch(boolean match) { super(match); }
+  }
 
   //-----------------------------------------------------------
   // REAL FEATURE TEMPLATES
