@@ -128,6 +128,15 @@ public class Mention implements Serializable, Decodable {
     return markCoreferent(otherMention.entity);
   }
 
+  public ClusteredMention reMarkCoreferent(ClusteredMention otherMention){
+	  	Entity cluster = otherMention.entity;
+	  	this.corefferentWith.mentions.remove(this);
+	  	this.corefferentWith = null;
+	  	cluster.add(this);
+	    corefferentWith = cluster;
+	    return new ClusteredMention(this,cluster);
+  	}
+
   /**
    * Mark this mention as a singleton (for now, at least)
    * @return The clustered mention associated with this assignment
