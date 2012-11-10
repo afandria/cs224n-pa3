@@ -118,6 +118,13 @@ public class Mention implements Serializable, Decodable {
     corefferentWith = cluster;
     return new ClusteredMention(this,cluster);
   }
+  
+  public boolean isCoreferent(){
+	  if(corefferentWith == null ){
+		  return false;
+	  }
+	    else{return true;}
+  }
 
   /**
    * Mark this mention as referring to an entity.
