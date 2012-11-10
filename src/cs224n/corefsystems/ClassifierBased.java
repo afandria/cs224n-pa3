@@ -39,14 +39,14 @@ public class ClassifierBased implements CoreferenceSystem {
 
 			Feature.ExactHeadMatch.class,
 			//Feature.ExactMatch.class,
-			Feature.NearbyMentions.class,
-			Feature.HobbsCandidate.class,
-			Feature.NearbyEditDistance.class,
-			Feature.NearbyHeadEditDistance.class,
+			//Feature.NearbyMentions.class,
+			//Feature.HobbsCandidate.class,
+			//Feature.NearbyEditDistance.class,
+			//Feature.NearbyHeadEditDistance.class,
 			Feature.PronounMatch.class,
-			Feature.GenderExactMatch.class,
-			Feature.GenderNoMatch.class,
-			Feature.AnyTokenMatch.class,
+			//Feature.GenderExactMatch.class,
+			//Feature.GenderNoMatch.class,
+			//Feature.AnyTokenMatch.class,
 
 			//skeleton for how to create a pair feature
 			//Pair.make(Feature.IsFeature1.class, Feature.IsFeature2.class),
@@ -575,6 +575,8 @@ public class ClassifierBased implements CoreferenceSystem {
 	    return candidateMentions;
 	}
 
+	// The following code was free from:
+	// http://professorjava.weebly.com/edit-distance.html
 	public static int editDistance(String s, String t){
 	    int m=s.length();
 	    int n=t.length();
